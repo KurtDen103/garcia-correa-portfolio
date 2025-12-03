@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 def home(request):
     # Tiyakin na ang 'index.html' ay nasa templates/main_app/index.html folder mo
-    context = {}
+   
     # Kung may data ka na ipapasa sa template
     return render(request, 'index.html', {})
     
