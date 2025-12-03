@@ -1,6 +1,14 @@
-from django.shortcuts import render
+# main_app/views.py
 
-# Create your views here.
+from django.shortcuts import render
+# from django.http import HttpResponse # Hindi ito kailangan kung gagamit ka ng render
+
 def home(request):
-    # Ipagpalagay na ito ang portfolio template mo
+    # Tiyakin na ang 'index.html' ay nasa templates/main_app/index.html folder mo
+    context = {}
+    # Kung may data ka na ipapasa sa template
     return render(request, 'index.html', {})
+    
+# Kung nagdagdag ka ng 'about' sa urls.py:
+# def about(request):
+#     return render(request, 'about.html', {})
