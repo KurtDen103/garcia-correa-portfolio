@@ -2,78 +2,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G&C | Modern Portfolio</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G&C | Modern Portfolio</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
 
-    <nav>
-        <div class="container">
-            <div class="logo">BT2-103 Developers</div>
-        </div>
-    </nav>
+    <nav>
+        <div class="container">
+            <div class="logo">BT2-103 Developers</div>
+        </div>
+    </nav>
 
-    <section class="hero">
-        <h1>Garcia & Correa</h1>
-        <p class="intro-text">A duo of developers creating modern and user-friendly web applications.</p>
-        <a class="btn" href="#profiles">View Profiles</a>
-    </section>
+    <section class="hero">
+        <h1>Garcia & Correa</h1>
+        <p class="intro-text">A duo of developers creating modern and user-friendly web applications.</p>
+        <a class="btn" href="#profiles">View Profiles</a>
+    </section>
 
-    <section class="profile-section" id="profiles">
-        <div class="container">
-            <h2>Meet Us</h2>
-            <div class="profile-grid">
-                <div class="profile-card" onclick="openModal('kurtModal')">
-                    <h3>Kurt Dustin F. Garcia</h3>
-                    <p>Backend Developer</p>
-                </div>
+    <section class="profile-section" id="profiles">
+        <div class="container">
+            <h2>Meet Us</h2>
+            <div class="profile-grid">
+                
+                                <div class="profile-card" onclick="openModal('kurtModal')">
+                    <img src="{% static 'kurt_profile.jpg' %}" alt="Kurt Garcia Profile" class="profile-img">
+                    <h3>Kurt Dustin F. Garcia</h3>
+                    <p>Backend Developer</p>
+                </div>
 
-                <div class="profile-card" onclick="openModal('denModal')">
-                    <h3>Denver S. Correa</h3>
-                    <p>Frontend Developer</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                                <div class="profile-card" onclick="openModal('denModal')">
+                    <img src="{% static 'denver_profile.jpg' %}" alt="Denver Correa Profile" class="profile-img">
+                    <h3>Denver S. Correa</h3>
+                    <p>Frontend Developer</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="modal" id="kurtModal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('kurtModal')">&times;</span>
-            <h3>Kurt F. Garcia</h3>
-            <p><strong>Age:</strong> 19</p>
-            <p><strong>Address:</strong> Sta. Maria, Bulacan</p>
-            <p><strong>Role:</strong> Backend Developer</p>
-            <p><strong>Skills:</strong> Python, Django, SQL, HTML, CSS</p>
-            <p>Focused on creating accessible and secure systems.</p>
-        </div>
-    </div>
+        <div class="modal" id="kurtModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('kurtModal')">&times;</span>
+            <h3>Kurt F. Garcia</h3>
+            <p><strong>Age:</strong> 19</p>
+            <p><strong>Address:</strong> Sta. Maria, Bulacan</p>
+            <p><strong>Role:</strong> Backend Developer</p>
+            <p><strong>Skills:</strong> Python, Django, SQL, HTML, CSS</p>
+            <p>Focused on creating accessible and secure systems.</p>
+        </div>
+    </div>
 
-    <div class="modal" id="denModal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('denModal')">&times;</span>
-            <h3>Denver S. Correa</h3>
-            <p><strong>Role:</strong> Frontend Developer</p>
-            <p><strong>Age:</strong> 19</p>
-            <p><strong>Address:</strong> Norzagaray, Bulacan</p>
-            <p><strong>Skills:</strong> Web-Design, HTML, CSS, Python, Django</p>
-            <p>Focused on clean and entertaining user experiences.</p>
-        </div>
-    </div>
+    <div class="modal" id="denModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('denModal')">&times;</span>
+            <h3>Denver S. Correa</h3>
+            <p><strong>Role:</strong> Frontend Developer</p>
+            <p><strong>Age:</strong> 19</p>
+            <p><strong>Address:</strong> Norzagaray, Bulacan</p>
+            <p><strong>Skills:</strong> Web-Design, HTML, CSS, Python, Django</p>
+            <p>Focused on clean and entertaining user experiences.</p>
+        </div>
+    </div>
 
-    <footer>
-        © 2025 BT2-103 Developers — All Rights Reserved
-    </footer>
+    <footer>
+        © 2025 BT2-103 Developers — All Rights Reserved
+    </footer>
 
-    <script>
-        function openModal(id) {
-            document.getElementById(id).style.display = "flex";
-        }
-        function closeModal(id) {
-            document.getElementById(id).style.display = "none";
-        }
-    </script>
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = "flex";
+        }
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
