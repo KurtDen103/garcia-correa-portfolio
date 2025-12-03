@@ -2,81 +2,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G&C | Modern Portfolio</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G&C | Modern Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
 
-    <nav>
-        <div class="container">
-            <div class="logo">BT2-103 Developers</div>
-        </div>
-    </nav>
+    <nav>
+        <div class="container">
+            <div class="logo">BT2-103 <i class="fas fa-code"></i> Developers</div>
+            <ul>
+                <li><a href="#profiles">Profiles</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <section class="hero">
-        <h1>Garcia & Correa</h1>
-        <p class="intro-text">A duo of developers creating modern and user-friendly web applications.</p>
-        <a class="btn" href="#profiles">View Profiles</a>
-    </section>
+    <section class="hero">
+        <h1 class="typing-effect">Garcia & Correa</h1>
+        <p class="intro-text">A duo of developers creating modern and user-friendly web applications.</p>
+        <a class="btn" href="#profiles">View Profiles</a>
+    </section>
 
-    <section class="profile-section" id="profiles">
-        <div class="container">
-            <h2>Meet Us</h2>
-            <div class="profile-grid">
-                
-                                <div class="profile-card" onclick="openModal('kurtModal')">
-                    <img src="{% static 'kurt_profile.jpg' %}" alt="Kurt Garcia Profile" class="profile-img">
-                    <h3>Kurt Dustin F. Garcia</h3>
-                    <p>Backend Developer</p>
-                </div>
+    <section class="profile-section" id="profiles">
+        <div class="container">
+            <h2>Meet Us</h2>
+            <div class="profile-grid">
+                
+                <div class="profile-card" onclick="openModal('kurtModal')">
+                    <img src="{% static 'kurt_profile.jpg' %}" alt="Kurt Garcia Profile" class="profile-img">
+                    <h3>Kurt Dustin F. Garcia</h3>
+                    <p>Backend Developer</p>
+                </div>
 
-                                <div class="profile-card" onclick="openModal('denModal')">
-                    <img src="{% static 'denver_profile.jpg' %}" alt="Denver Correa Profile" class="profile-img">
-                    <h3>Denver S. Correa</h3>
-                    <p>Frontend Developer</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                <div class="profile-card" onclick="openModal('denModal')">
+                    <img src="{% static 'denver_profile.jpg' %}" alt="Denver Correa Profile" class="profile-img">
+                    <h3>Denver S. Correa</h3>
+                    <p>Frontend Developer</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <div class="modal" id="kurtModal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('kurtModal')">&times;</span>
-            <h3>Kurt F. Garcia</h3>
-            <p><strong>Age:</strong> 19</p>
-            <p><strong>Address:</strong> Sta. Maria, Bulacan</p>
-            <p><strong>Role:</strong> Backend Developer</p>
-            <p><strong>Skills:</strong> Python, Django, SQL, HTML, CSS</p>
-            <p>Focused on creating accessible and secure systems.</p>
-        </div>
-    </div>
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <h2>Our Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Project Title One</h3>
+                    <p>A web application built with Django focusing on real-time data processing.</p>
+                    <div class="tags">
+                        <span class="tag django">Django</span>
+                        <span class="tag python">Python</span>
+                        <span class="tag html">HTML/CSS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank"><i class="fas fa-link"></i> Live Demo</a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
 
-    <div class="modal" id="denModal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('denModal')">&times;</span>
-            <h3>Denver S. Correa</h3>
-            <p><strong>Role:</strong> Frontend Developer</p>
-            <p><strong>Age:</strong> 19</p>
-            <p><strong>Address:</strong> Norzagaray, Bulacan</p>
-            <p><strong>Skills:</strong> Web-Design, HTML, CSS, Python, Django</p>
-            <p>Focused on clean and entertaining user experiences.</p>
-        </div>
-    </div>
+                <div class="project-card">
+                    <h3>Project Title Two</h3>
+                    <p>An e-commerce prototype with a focus on interactive frontend design (React/JS).</p>
+                    <div class="tags">
+                        <span class="tag frontend">Frontend</span>
+                        <span class="tag react">React</span>
+                        <span class="tag js">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank"><i class="fas fa-link"></i> Live Demo</a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+    
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or opportunities, feel free to reach out to us!</p>
+            <a class="btn contact-btn" href="mailto:your.group.email@example.com">Send an Email <i class="fas fa-envelope"></i></a>
+        </div>
+    </section>
 
-    <footer>
-        © 2025 BT2-103 Developers — All Rights Reserved
-    </footer>
 
-    <script>
-        function openModal(id) {
-            document.getElementById(id).style.display = "flex";
-        }
-        function closeModal(id) {
-            document.getElementById(id).style.display = "none";
-        }
-    </script>
+    <div class="modal" id="kurtModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('kurtModal')">&times;</span>
+            <h3>Kurt F. Garcia</h3>
+            <div class="tag-list">
+                <span class="tag python">Python</span>
+                <span class="tag django">Django</span>
+                <span class="tag sql">SQL</span>
+            </div>
+            <p><strong>Age:</strong> 19</p>
+            <p><strong>Address:</strong> Sta. Maria, Bulacan</p>
+            <p><strong>Role:</strong> Backend Developer</p>
+            <p>Focused on creating accessible and secure systems.</p>
+        </div>
+    </div>
+
+    <div class="modal" id="denModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('denModal')">&times;</span>
+            <h3>Denver S. Correa</h3>
+            <div class="tag-list">
+                <span class="tag frontend">Web Design</span>
+                <span class="tag html">HTML/CSS</span>
+                <span class="tag js">JavaScript</span>
+            </div>
+            <p><strong>Role:</strong> Frontend Developer</p>
+            <p><strong>Age:</strong> 19</p>
+            <p><strong>Address:</strong> Norzagaray, Bulacan</p>
+            <p>Focused on clean and entertaining user experiences.</p>
+        </div>
+    </div>
+
+    <footer class="contact-footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:your.group.email@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>© 2025 BT2-103 Developers — All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = "flex";
+        }
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>

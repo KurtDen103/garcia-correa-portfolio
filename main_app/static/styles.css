@@ -1,43 +1,66 @@
+/* G&C Modern Portfolio CSS */
+:root {
+    --primary-color: #58A6FF; /* Blue Accent */
+    --secondary-color: #238636; /* Green Button */
+    --bg-dark: #0D1117;
+    --bg-card: #161B22;
+    --border-color: #30363D;
+    --text-light: #E6EDF3;
+    --text-muted: #8B949E;
+}
+
+/* Base Styles */
 body {
-    background: #0D1117;
-    color: #E6EDF3;
+    background: var(--bg-dark);
+    color: var(--text-light);
     font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
+/* Typography and Layout */
+h1, h2, h3 { color: var(--text-light); }
+.container { width: 90%; max-width: 1200px; margin: auto; }
+a { text-decoration: none; color: var(--primary-color); }
+a:hover { color: var(--primary-color); opacity: 0.8; }
+
+/* Navigation */
 nav {
-    background: #161B22;
-    padding: 18px 0;
+    background: var(--bg-card);
+    padding: 15px 0;
     position: sticky;
     top: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     z-index: 100;
 }
 nav .logo {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #58A6FF;
-}
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-}
-nav ul a {
-    color: #E6EDF3;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s;
-}
-nav ul a:hover {
-    color: #58A6FF;
+    color: var(--primary-color);
 }
 nav .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+}
+nav ul a {
+    color: var(--text-light);
+    font-weight: 500;
+    transition: 0.3s;
+}
+nav ul a:hover {
+    color: var(--primary-color);
+}
 
+/* Hero Section */
 .hero {
     min-height: 80vh;
     display: flex;
@@ -45,114 +68,226 @@ nav .container {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 40px 0;
+    padding: 60px 0;
 }
 .hero h1 {
-    font-size: 3.2rem;
-    margin-bottom: 20px;
-    color: #E6EDF3;
+    font-size: 3.8rem;
+    margin-bottom: 15px;
+    /* Neon glow effect */
+    text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color);
 }
 .intro-text {
-    max-width: 780px;
+    max-width: 800px;
     font-size: 1.2rem;
-    color: #8B949E;
+    color: var(--text-muted);
 }
 .btn {
-    margin-top: 25px;
-    background: #238636;
+    margin-top: 30px;
+    background: var(--secondary-color);
     color: white;
-    padding: 12px 25px;
+    padding: 12px 30px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 .btn:hover {
     background: #2EA043;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
 }
 
+/* Profile Section */
 .profile-section {
-    padding: 5rem 0;
+    padding: 6rem 0;
 }
-.profile-section h2 {
+.profile-section h2, .projects-section h2, .contact-section h2 {
     text-align: center;
-    margin-bottom: 45px;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
 }
 .profile-grid {
     display: flex;
     justify-content: center;
-    gap: 35px;
+    gap: 40px;
     flex-wrap: wrap;
 }
 .profile-card {
-    background: #161B22;
+    background: var(--bg-card);
     width: 330px;
-    padding: 25px;
-    border-radius: 12px;
+    padding: 30px;
+    border-radius: 15px;
     text-align: center;
-    border: 1px solid #30363D;
+    border: 1px solid var(--border-color);
     transition: 0.3s;
     cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 .profile-card:hover {
-    border-color: #58A6FF;
-    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
 }
 .profile-card h3 {
-    color: #58A6FF;
+    color: var(--primary-color);
+    margin-top: 15px;
+}
+.profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--primary-color);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* Projects Section */
+.projects-section {
+    padding: 5rem 0;
+    background: #101419; /* Slightly different background for visual break */
+}
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.project-card {
+    background: var(--bg-card);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    transition: 0.3s;
+}
+.project-card:hover {
+    border-color: #347d39;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+.project-card h3 {
+    margin-top: 0;
+    color: #a371f7; /* Violet accent */
+}
+.project-links a {
+    margin-right: 15px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+.project-links a:hover {
+    color: var(--primary-color);
+}
+.project-links i { margin-right: 5px; }
+
+
+/* Tags/Badges (Para sa Skills) */
+.tags, .tag-list {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.tag, .tag-list span {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+/* Tag Color Schemes */
+.tag.django, .tag.python { background: rgba(53, 126, 199, 0.2); color: #5391d7; }
+.tag.html, .tag.frontend { background: rgba(227, 79, 41, 0.2); color: #e34f29; }
+.tag.react, .tag.js { background: rgba(97, 218, 251, 0.2); color: #61DAFB; }
+.tag.sql { background: rgba(139, 148, 156, 0.2); color: #8B949E; }
+
+
+/* Modals */
 .modal {
     display: none;
     position: fixed;
     top: 0; left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.65);
+    background: rgba(0,0,0,0.8);
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
 .modal-content {
-    background: #161B22;
+    background: var(--bg-card);
     width: 450px;
     padding: 30px;
-    border-radius: 12px;
-    border: 1px solid #30363D;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
     animation: fadeIn 0.3s;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
 }
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px);}
-    to { opacity: 1; transform: translateY(0);}
+    from { opacity: 0; transform: scale(0.95);}
+    to { opacity: 1; transform: scale(1);}
 }
 .close {
     float: right;
     cursor: pointer;
-    font-size: 22px;
-    color: #8B949E;
+    font-size: 24px;
+    color: var(--text-muted);
 }
 .close:hover {
     color: #FF7675;
 }
 
-footer {
-    background: #161B22;
+/* Contact Section */
+.contact-section {
+    padding: 6rem 0;
     text-align: center;
-    padding: 25px;
-    margin-top: 50px;
-    font-size: 0.9rem;
+}
+.contact-section p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: var(--text-muted);
 }
 
-.profile-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
+/* Footer and Social Links */
+.contact-footer {
+    background: var(--bg-card);
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+.social-links {
     margin-bottom: 15px;
-    border: 3px solid #58A6FF;
-    transition: transform 0.3s, box-shadow 0.3s;
 }
-.profile-card:hover .profile-img {
+.social-links a {
+    font-size: 1.8rem;
+    color: var(--text-muted);
+    margin: 0 10px;
+    transition: 0.3s;
+}
+.social-links a:hover {
+    color: var(--primary-color);
     transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(88, 166, 255, 0.6);
 }
 
-.container { width: 90%; max-width: 1200px; margin: auto; }
+/* Responsiveness (Para sa Mobile/Small Screen) */
+@media (max-width: 768px) {
+    nav .container {
+        flex-direction: column;
+    }
+    nav ul {
+        margin-top: 15px;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .intro-text {
+        font-size: 1rem;
+    }
+    .profile-card {
+        width: 100%;
+        max-width: 350px;
+    }
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+}
